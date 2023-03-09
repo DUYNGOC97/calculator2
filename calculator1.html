@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        padding: 10px 20px;
+        color:blue
+    }
+    input {
+        padding: 15px 30px;
+    }
+    
+</style>
+ <body>
+        <div id="calculator">
+            <div>
+                <input type="text" id="result" class="nhap" >
+                <br><br>
+            </div>
+            <div>
+                <button class="button" onclick="mun('7')">7</button>
+                <button class="button" onclick="num('8')">8</button>
+                <button class="button" onclick="num('9')">9</button>
+                <button class="button" onclick="clear()">C</button>
+            </div>
+            <div>
+                <button class="button" onclick="num('4')">4</button>
+                <button class="button" onclick="num('5')">5</button>
+                <button class="button" onclick="num('6')">6</button>
+                <button class="button" onclick="cal('/')">/</button>
+            </div>
+            <div>
+                <button class="button" onclick="num('1')">1</button>
+                <button class="button" onclick="num('2')">2</button>
+                <button class="button" onclick="num('3')">3</button>
+                <button class="button" onclick="cal('*')">*</button>
+            </div>
+            <div>
+                <button class="button" onclick="num('.')">.</button>
+                <button class="button" onclick="num('0')">0</button>
+                <button class="button" onclick="cal('=')">=</button>
+                <button class="button" onclick="cal('-')">-</button>
+            </div>
+            <div>
+                <button class="button" onclick="back()">CE</button>
+                <button class="button" onclick="cal('+')">+</button>
+            </div>
+        </div>
+        <script>
+            let result = document.getElementById('result');
+    
+            function num(value) {
+                result.value += value;
+            }
+    
+            function clear() {
+                result.value = '';
+            }
+    
+            function back() {
+                result.value = result.value.slice(0, -1);
+            }
+            function cal(operator) {
+             switch (operator) {
+              case '+':
+              case '-':
+              case '*':
+              case '/':
+                result.value += operator;
+              break;
+              case '=':
+                 result.value = eval(result.value);
+              break;
+    }
+}
+</script>
+</body>
+</html>
